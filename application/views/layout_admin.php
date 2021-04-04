@@ -221,7 +221,7 @@
                         </div>
                     </li>
                     <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                            <img alt="image" src="<?php echo base_url('assets/admin/assets/img/avatar/avatar-1.png'); ?>" class="rounded-circle mr-1">
+                            <img alt="image" src="<?php echo base_url('assets/admin/assets/img/avatar/avatar-1.jpg'); ?>" class="rounded-circle mr-1">
                             <div class="d-sm-none d-lg-inline-block">Hi, Riska Handika</div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
@@ -257,6 +257,20 @@
                         </li>
                         <li>
                             <a href="<?php echo site_url('Kategori'); ?>" class="nav-link"><i class="fas fa-th"></i> <span>Kategori</span></a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link has-dropdown"><i class="fas fa-fighter-jet"></i></i><span>Jasa Pengiriman</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" href="<?php echo site_url('jasakirim/kota'); ?>">Kota</a></li>
+                                <li><a class="nav-link" href="<?php echo site_url('jasakirim/kurir'); ?>">Kurir</a></li>
+                                <li><a class="nav-link" href="<?php echo site_url('jasakirim/ongkir'); ?>">Ongkos Kirim</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link"><i class="fas fa-users"></i> <span>Member</span></a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link"><i class="fas fa-cart-plus"></i> <span>Toko</span></a>
                         </li>
                     </ul>
                 </aside>

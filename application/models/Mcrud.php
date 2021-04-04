@@ -28,4 +28,14 @@ class Mcrud extends CI_Model
     {
         $this->db->delete($tabel, array($pk => $id));
     }
+
+    public function ongkir()
+    {
+        $this->db->select('idBiayaKirim, namaKurir, a.namaKota AS kotaAsal, t.namaKota AS kotaTujuan, biaya');
+        $this->db->from('tbl_biaya_kirim');
+        $this->db->join('tbl_kurir', 'tbl_biaya_kirim.idKurir=tbl_kurir.idKurir');
+        $this->db->join('tbl_kota a', 'a.idKota=idKotaAsal');
+        $this->db->join('tbl_kota t', 't.idKota=idKotaTujuan');
+        return $this->db->get();
+    }
 }
