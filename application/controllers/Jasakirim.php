@@ -59,7 +59,7 @@ class Jasakirim extends CI_Controller
     public function delKota($id)
     {
         $where = array('idkota' => $id);
-        $this->Mcrud->del_data('tbl_kota', $where);
+        $this->Mcrud->delete('tbl_kota', 'id_kota', $id);
         redirect('jasakirim/kota');
     }
 
@@ -111,7 +111,7 @@ class Jasakirim extends CI_Controller
     public function delKurir($id)
     {
         $where = array('idKurir' => $id);
-        $this->Mcrud->del_data('tbl_kurir', $where);
+        $this->Mcrud->delete('tbl_kurir', 'idkurir', $id);
         redirect('jasakirim/kurir');
     }
 
@@ -188,7 +188,7 @@ class Jasakirim extends CI_Controller
     public function delOngkir($id)
     {
         $where = array('idBiayaKirim' => $id);
-        $this->Mcrud->del_data('tbl_biaya_kirim', $where);
+        $this->Mcrud->delete('tbl_biaya_kirim', 'idBiayaKirim', $id);
         redirect('jasakirim/ongkir');
     }
 }
