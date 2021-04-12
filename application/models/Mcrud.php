@@ -24,9 +24,15 @@ class Mcrud extends CI_Model
         $this->db->update($tabel, $data);
     }
 
-    public function delete($tabel, $pk, $id)
+    //public function delete($tabel, $pk, $id)
+    //{
+    //    $this->db->delete($tabel, array($pk => $id));
+    //}
+
+    public function delete($tabel, $id)
     {
-        $this->db->delete($tabel, array($pk => $id));
+        $this->db->where($id);
+        $this->db->delete($tabel);
     }
 
     public function ongkir()

@@ -29,7 +29,7 @@
                                     <?php foreach ($kategori as $item) { ?>
                                         <tr>
                                             <td><?php echo $item->idkat; ?></td>
-                                            <td><?php echo $item->namaKat; ?></td>
+                                            <td><?php echo $item->namakat; ?></td>
                                             <td><a href="<?php echo site_url('kategori/getid/' . $item->idkat); ?>" class="btn btn-warning">Edit</a>
                                                 <a href="<?php echo site_url('kategori/delete/' . $item->idkat); ?>" onclick="return confirm('Yakin akan menghapus data ini..?')" class="btn btn-danger">Hapus</a>
                                             </td>

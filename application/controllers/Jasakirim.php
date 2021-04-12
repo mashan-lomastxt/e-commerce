@@ -56,10 +56,17 @@ class Jasakirim extends CI_Controller
         redirect('jasakirim/kota');
     }
 
-    public function delKota($id)
+    //public function delKota($id)
+    //{
+    //    $where = array('idkota' => $id);
+    //    $this->Mcrud->delete('tbl_kota', 'id_kota', $id);
+    //    redirect('jasakirim/kota');
+    //}
+
+    public function delkota($id)
     {
-        $where = array('idkota' => $id);
-        $this->Mcrud->delete('tbl_kota', 'id_kota', $id);
+        $dataDelete = array('idKota' => $id);
+        $this->Mcrud->delete('tbl_kota', $dataDelete);
         redirect('jasakirim/kota');
     }
 
