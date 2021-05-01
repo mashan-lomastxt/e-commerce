@@ -221,7 +221,7 @@
                         </div>
                     </li>
                     <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                            <img alt="image" src="<?php echo base_url('assets/admin/assets/img/avatar/avatar-1.jpg'); ?>" class="rounded-circle mr-1">
+                            <img alt="image" src="<?php echo base_url('assets/admin/assets/img/avatar/profile.png'); ?>" class="rounded-circle mr-1">
                             <div class="d-sm-none d-lg-inline-block">Hi, Riska Handika</div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
