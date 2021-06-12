@@ -267,7 +267,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#" class="nav-link"><i class="fas fa-users"></i> <span>Member</span></a>
+                            <a href="<?php echo site_url('Member'); ?>" class="nav-link"><i class="fas fa-users"></i> <span>Member</span></a>
                         </li>
                         <li>
                             <a href="#" class="nav-link"><i class="fas fa-cart-plus"></i> <span>Toko</span></a>

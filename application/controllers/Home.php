@@ -8,7 +8,8 @@ class Home extends CI_Controller{
     }
 
     public function index(){
+        //$data['kota'] = $this->Mfrontend->get_all_kota()->result();
         $data['kategori'] = $this->Mfrontend->get_all_kategori()->result();
-        $this->template->load('layout_frontend','frontend/home');
+        $this->template->load('layout_frontend','frontend/home', $data);
     }
 }
