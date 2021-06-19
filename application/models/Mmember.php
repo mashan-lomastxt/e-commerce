@@ -1,7 +1,7 @@
 <?php 
-class Mmember extends CI_Model {
+class Mmember extends CI_Model 
+{
     private $table = "tbl_member";
-
     public $idKonsumen;
     public $username;
     public $password;

@@ -137,7 +137,6 @@ class Jasakirim extends CI_Controller
     {
         $data['kurir'] = $this->Mcrud->get_all_data('tbl_kurir')->result();
         $data['kota'] = $this->Mcrud->get_all_data('tbl_kota')->result();
-
         $data["usrName"] = $this->session->userdata('userName');
         $this->template->load('layout_admin', 'admin/jasakirim/ongkir/form_add', $data);
     }

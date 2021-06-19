@@ -56,7 +56,7 @@
           </li>
 
         </ul>
-		 <a href="#" class="btn btn-outline-light">Masuk</a>
+		 <a href="<?php echo site_url('frontend/login'); ?>" class="btn btn-outline-light">Masuk</a>
 		 &nbsp; &nbsp; &nbsp;
 		 <a href="#" class="btn btn-outline-light">Daftar</a>
       </nav>
