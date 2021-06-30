@@ -246,7 +246,7 @@
             <div class="main-sidebar">
                 <aside id="sidebar-wrapper">
                     <div class="sidebar-brand">
-                        <a href="<?php echo site_url('adminpanel/dashboard'); ?>">ADMINISTRATOR</a>
+                        <a href="<?php echo site_url('admin/adminpanel/dashboard'); ?>">ADMINISTRATOR</a>
                     </div>
                     <div class="sidebar-brand sidebar-brand-sm">
                         <a href="index.html">St</a>
@@ -260,20 +260,6 @@
                             <a href="<?php echo site_url('admin/Kategori'); ?>" class="nav-link"><i class="fas fa-th"></i> <span>Kategori</span></a>
                         </li>
 
-                        <li>
-                            <a class="nav-link has-dropdown"><i class="fas fa-fighter-jet"></i></i><span>Jasa Pengiriman</span></a>
-                            <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="<?php echo site_url('admin/Kota'); ?>">Kota</a></li>
-                                <li><a class="nav-link" href="<?php echo site_url('admin/Kurir'); ?>">Kurir</a></li>
-                                <li><a class="nav-link" href="<?php echo site_url('admin/ongkir'); ?>">Ongkos Kirim</a></li>
-                            </ul>
-                        </li>
-
-                        </li>
-
-                        <li><a class="nav-link" href="<?php echo site_url('admin/member');?>"> <i class="fas fa-th">  </i> <span>Member</span></a></li>
-            
-                        <li><a class="nav-link" href="<?php echo site_url('admin/toko');?>"> <i class="fas fa-th">  </i> <span>Toko</span></a></li>
             
                     </ul>
                 </aside>
