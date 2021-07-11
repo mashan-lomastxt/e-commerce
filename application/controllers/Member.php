@@ -1,67 +1,46 @@
 <?php 
- 
-class Member extends CI_Controller{  
-  
-    function __construct(){
+
+class Member extends CI_Controller
+{
+    function __construct()
+    {
         parent::__construct();
-        $this->load->model('Mfrontend');
-        $this->load->model('Mmember');
+        $this->load->model('Mcrud');
     }
 
-    function act_login(){
-        $u= $this->input->post('username');
-        $p= $this->input->post('password');
-        $cek = $this->Mmember->cek_login($u,$p)->num_rows();
-        $result = $this->Mmember->cek_login($u, $p)->result();
-        
-        
-        if($cek==1){
-            $data_session= array(
-                'username'=> $u, 
-                'id'=>$result[0]->idKonsumen,
-                'status'=>'login' );
-        $this->session->set_userdata($data_session);
-        redirect('member/index');
-        }
-        else{
-            $this->load->view('pesan_login');
-            $this->session->set_flashdata('pesan','Username/Password Tidak Sesuai');
-            
-            redirect('home/login');
-        }
-    }
-    public function cek_login($u, $p){
-        $q = $this->db->get_where('tbl_member', array('userName'=>$u, 'password'=>$p));
-        return $q;
+    public function index()
+    {
+        $data['member']=$this->Mcrud->get_all_data('tbl_member')->result();
+        $this->template->load('layout_admin','admin/member/index', $data);
     }
 
-     
-    public function index(){
-        //$data['kota'] = $this->Mfrontend->get_all_kota()->result();
-        $data['kategori'] = $this->Mfrontend->get_all_kategori()->result();
-        $this->template->load('layout_frontend','frontend/user_menu', $data);
-    }
-    public function transaksi(){
-        //$data['kota'] = $this->Mfrontend->get_all_kota()->result();
-        $data['kategori'] = $this->Mfrontend->get_all_kategori()->result();
-        $this->template->load('layout_frontend','frontend/member_transaksi', $data);
+    public function add() {
+		$this->template->load('layout_admin','admin/member/form_add');
+	}
+
+    public function getid($id)
+    {
+        $dataWhere = array('idkonsumen'=>$id);
+        $data['member'] = $this->Mcrud->get_by_id('tbl_member', $dataWhere)->row_object();
+        $this->template->load('layout_admin','admin/member/form_edit',$data);
     }
 
-    public function menu(){
-        //$data['kota'] = $this->Mfrontend->get_all_kota()->result();
-        $data['kategori'] = $this->Mfrontend->get_all_kategori()->result();
-        $this->template->load('layout_frontend','frontend/menu_member', $data);
+    public function edit()
+    {
+        $id = $this->input->post('id');
+        $namaKonsumen = $this->input->post('namaKonsumen');
+        $dataUpdate = array('namaKonsumen' => $namaKonsumen);
+        $this->Mcrud->update('tbl_member', $dataUpdate, 'idkonsumen', $id);
+        redirect('member');
     }
-    public function toko(){
-        //$data['kota'] = $this->Mfrontend->get_all_kota()->result();
-        $data['kategori'] = $this->Mfrontend->get_all_kategori()->result();
-        
-        $this->template->load('layout_frontend','frontend/member_toko', $data);
+
+    public function delete($id)
+    {
+        $where = array('idKonsumen' => $id);
+        $this->Mcrud->hapus('tbl_member', $where);
+        $this->session->set_flashdata('notif', 'Berhasil say');
+        redirect('Member');
     }
-    public function buattoko(){
-        $data['kategori'] = $this->Mfrontend->get_all_kategori()->result();
-        
-        $this->template->load('layout_frontend','frontend/form_create_toko', $data);
-    }
- 
+
+
 }

@@ -1,4 +1,4 @@
-       <!-- Main Content -->
+      <!-- Main Content -->
       <div class="main-content">
         <section class="section">
           <div class="section-header">
@@ -11,29 +11,39 @@
           </div>
 
           <div class="section-body">
+            <h2 class="section-title">Data Kategori</h2>
+
             <div class="row">
               <div class="col-12 col-md-6 col-lg-6">
-                <?php echo $this->session->flashdata('pesan'); ?>
                 <div class="card">
                   <div class="card-header">
-                    <h4>Data Kategori</h4><a href="<?php echo site_url('kategori/add');?>" class="btn btn-primary"> Tambah Kategori</a>
+                    <h4>Data Kategori</h4> <a href="<?php echo site_url('kategori/add'); ?>" class="btn btn-primary">Tambah Kategori</a>
                   </div>
+                  <?php if ($this->session->flashdata('ting tong')) { ?>
+                    <div class="alert alert-success alert-dismissible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <?= $this->session->flashdata('ting tong'); ?>
+                    </div>
+                  <?php } ?>
                   <div class="card-body">
                     <div class="table-responsive">
                       <table class="table table-bordered table-md">
                         <tr>
-                          <th>No. </th>
+                          <th>No</th>
                           <th>Nama Kategori</th>
                           <th>Action</th>
                         </tr>
-                        <?php foreach ($kategori as $item); {?>
+
+                        <?php foreach($kategori as $item) { ?>
                         <tr>
-                          <td><?php echo $item->idKat;?></td>
-                          <td><?php echo $item->namaKat;?></td>
-                         <td><a href="<?php echo site_url('kategori/getid/' .$item->idKat); ?>" class="btn btn-warning">Edit</a>
-                          <a href="<?php echo site_url('kategori/delete/' .$item->idKat); ?>" class="btn btn-danger">Hapus</a></td>
+                          <td><?php echo $item->idKat; ?></td>
+                          <td><?php echo $item->namakat; ?></td>
+                          <td>
+                            <a href="<?php echo site_url('kategori/getid/'.$item->idKat); ?>" class="btn btn-warning">Edit</a> 
+                            <a href="<?php echo site_url('kategori/delete/'.$item->idKat); ?>" class="btn btn-danger" onclick="javascript: return confirm('Apakah anda yakin menghapus data ini ?')" >Hapus</a>
+                          </td>
                         </tr>
-                      <?php }?>
+                        <?php } ?>
                       </table>
                     </div>
                   </div>

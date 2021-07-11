@@ -20,9 +20,9 @@
                   </div>
                   <div class="card-body">
                <ul class="nav nav-pills flex-column">
-                      <li class="nav-item"><a href="http://localhost/tokokita_dev/index.php/member" class="nav-link">Beranda</a></li>
+                      <li class="nav-item"><a href="<?php echo site_url('member');?>" class="nav-link">Beranda</a></li>
                       <li class="nav-item"><a href="<?php echo site_url('member/transaksi'); ?>" class="nav-link">Transaksi</a></li>
-                      <li class="nav-item"><a href="http://localhost/tokokita_dev/index.php/member/riwayat_transaksi" class="nav-link">Riwayat Transaksi</a></li>
+                      <li class="nav-item"><a href="<?php echo site_url('member/riwayat_transaksi'); ?>" class="nav-link">Riwayat Transaksi</a></li>
                       <li class="nav-item"><a href="<?php echo site_url('member/toko'); ?>" class="nav-link">Toko</a></li>
                       <li class="nav-item"><a href="<?php echo site_url('member/user'); ?>" class="nav-link">Ubah Profil</a></li>
                       <li class="nav-item"><a href="<?php echo site_url('member/logout'); ?>" class="nav-link">Logout</a></li>

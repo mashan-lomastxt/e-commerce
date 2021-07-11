@@ -24,9 +24,9 @@
         <div class="row">
           <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
             <?php echo $this->session->flashdata('pesan'); ?>
-            <div class="login-brand">
+            <!--<div class="login-brand">
               <img src="<?php echo base_url('assets/admin/assets/img/stisla-fill.svg" alt="logo" width="100" class="shadow-light rounded-circle');?>">
-            </div>
+            </div> --> 
 
             <div class="card card-primary">
               <div class="card-header"><h4>Login</h4></div>
